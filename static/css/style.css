@@ -21,3 +21,15 @@ h1 {
     width: 100%;
     max-width: 300px;
 }
+
+div.helptext {
+    display: none;
+}
+
+ul.errorlist {
+    outline: none;
+    border: 1px solid red;
+    background: red;
+    border-radius: 5px;
+    padding: 4px;
+}

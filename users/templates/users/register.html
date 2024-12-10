@@ -5,9 +5,15 @@
 {% endblock %}
 
 {% block content %}
-<section class="">
-  <h1 class="">
-    Register New User
-  </h1>
-</section>
+    <section class="">
+    <h1 class="">
+        Register a New User
+    </h1>
+
+    <form action="/users/register/" class="form-with-validations" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-submit">Register</button>
+    </form>
+    </section>
 {% endblock %}
