@@ -7,6 +7,7 @@
 body {
     width: 100%;
     max-width: 800px;
+    margin: 0 auto;
     min=height: 100vh;
     background-color: #ffffff;
     line-height: 1.4;
@@ -15,6 +16,17 @@ body {
 h1 {
     font-size: 20px;
     color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .banner {
@@ -32,4 +44,22 @@ ul.errorlist {
     background: red;
     border-radius: 5px;
     padding: 4px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left {
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }

@@ -14,9 +14,35 @@
 </head>
 <body>
     <nav class="nav">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/about" class="nav-link">About</a>
-        <a href="{% url 'posts:list' %}" class="nav-link">Posts</a>
+        <div class="nav-left">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/about" class="nav-link">About</a>
+        
+            {% if user.is_authenticated %}
+                <a href="{% url 'posts:list' %}" class="nav-link">Posts</a>
+                <a href="{% url 'posts:new-post' %}" class="nav-link">New Post</a>
+            {% endif %}
+        </div>
+
+        {% if user.is_authenticated %}
+
+        <div class="nav-right">
+            <span class="user-icon">
+                {{ user.username }}
+            </span>
+            <form action="{% url 'users:logout' %}" class="logout" method="post">
+                {% csrf_token %}
+                <button class="logout-btn">Logout</button>
+            </form>
+        </div>
+        {% else %}
+        <div class="nav-right">
+            <a href="{% url 'users:login' %}" class="nav-link">Login</a>
+            <a href="{% url 'users:register' %}" class="nav-link">Register</a>
+        </div>
+        {% endif %}
+
+        
     </nav>
 
     <main class="main">
