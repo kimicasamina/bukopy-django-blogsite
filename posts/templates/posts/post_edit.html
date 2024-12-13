@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Edit Post
+{% endblock %}
+
+{% block content %}
+<section class="post-edit">
+    <h1>Edit Post</h1>
+    <form method="POST" enctype="multipart/form-data" class="form-with-validation">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save changes</button>
+    </form>
+</section>
+{% endblock %}
