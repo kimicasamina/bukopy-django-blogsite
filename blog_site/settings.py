@@ -36,7 +36,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['https://bukopyblog-ieb2d0nie-kimicasaminas-projects.vercel.app/']
 
 # SECURITY SETTINGS 
 SECURE_SSL_REDIRECT = True
