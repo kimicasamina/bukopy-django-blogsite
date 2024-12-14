@@ -26,8 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',  # Whitenoise for static files
-    'posts',
-    'users'
+    'posts',  # Your app
+    'users',  # Your app
 ]
 
 MIDDLEWARE = [
@@ -59,7 +59,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'blog_site.wsgi.application'  # Ensure using 'application' here
+WSGI_APPLICATION = 'blog_site.wsgi.application'
 
 # Database Configuration: Use PostgreSQL from Railway
 DATABASES = {
