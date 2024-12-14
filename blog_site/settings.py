@@ -13,30 +13,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-import environ
+from decouple import config 
 
-env = environ.Env()
-# Reading .env file
-environ.Env.read_env()
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-^zc3($=(_wcb5f18z+h!g^g^c4b!(*e8%pco$ymo%#kt_p25js'
-
-# SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your_default_secret_key')
-SECRET_KEY = env('DJANGO_SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['https://bukopyblog-ieb2d0nie-kimicasaminas-projects.vercel.app/']
+ALLOWED_HOSTS = ['*']
 
 # SECURITY SETTINGS 
 SECURE_SSL_REDIRECT = True
@@ -75,8 +57,8 @@ ROOT_URLCONF = 'blog_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # 'DIRS': ['templates'],
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR / 'templates'],
+        # 'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,25 +71,21 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'blog_site.wsgi.application'
+WSGI_APPLICATION = 'blog_site.wsgi.app'
 
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-
-    'default': env.db('DATABASE_URL') 
-}
-
 
 DATABASES = {
-    'default': env.db('DATABASE_URL') 
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3'
+    }
 }
+
+DATABASES['default'] = dj_database_url.config()
 
 
 # Password validation
@@ -153,7 +131,7 @@ USE_TZ = True
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles_build'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
