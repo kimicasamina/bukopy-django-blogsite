@@ -71,9 +71,9 @@
                     <li class="link">
                         <a href="/" class="">Feed</a>
                     </li>
-                    <li class="link">
+                    {% comment %} <li class="link">
                         <a href="/about" class="">About</a>
-                    </li>
+                    </li> {% endcomment %}
                     {% if user.is_authenticated %}
                     <li class="link">
                         <a href="{% url 'posts:list' %}" class="">Posts</a>
