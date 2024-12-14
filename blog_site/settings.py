@@ -29,8 +29,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-^zc3($=(_wcb5f18z+h!g^g^c4b!(*e8%pco$ymo%#kt_p25js'
 
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your_default_secret_key')
-
+# SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your_default_secret_key')
+SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -38,7 +38,11 @@ DEBUG = False
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['.vercel.app']
 
-
+# SECURITY SETTINGS 
+SECURE_SSL_REDIRECT = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
 
 # Application definition
 
