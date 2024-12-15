@@ -28,6 +28,7 @@ body {
 .container {
     width: 100%;
     max-width: 800px;
+    min-height: 100vh;
     margin: 0 auto;
 }
 
@@ -213,6 +214,12 @@ article.posts-feed {
     gap: 4px;
 }
 
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .posts-page__article {
     width: 100%;
     max-width: 500px;
@@ -222,6 +229,7 @@ article.posts-feed {
 .banner {
     width: 100%;
 }
+
 
 .post {
     display: flex;
@@ -272,3 +280,44 @@ h1 {
 .new-post-submit {
     padding: 8px;
 }
+
+.action-btn {
+    display: flex;
+    gap: 20px;
+}
+
+
+.delete-form > .delete-btn{
+    width: auto;
+    height: 100%;
+    background: black;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style:  none;
+    outline-style: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.edit-btn {
+    width: auto;
+    background: black;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style:  none;
+    outline-style: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
