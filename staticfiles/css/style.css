@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*--- reddit mono ---*/
+@import url("https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap");
+
+/* Inter */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    min=height: 100vh;
+    background-color: #ffffff;
+    line-height: 1.4;
+    font-family: Roboto;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 20px;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 16px;
+    font-fami
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+li {
+    list-style: none;
+}
+
+.nav {
+    display: none; 
+}
+
+.nav.visible {
+    width: 100%;
+    height: calc(100% - 80px);
+    padding: 0 16px;
+
+    position: absolute;
+    top: 80px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    background: #ffffff;
+    display: flex;
+}
+
+.nav .navlinks {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav .navlinks li {
+    padding: 8px 0;
+}
+
+.nav .nav-cta {
+    display: flex;
+    flex-direction: column;
+
+    align-content: flex-end;
+    gap: 8px;
+}
+
+.nav .nav-cta .login-btn,  .nav .nav-cta .register-btn {
+    width: 100%;
+    padding: 8px 0;
+    border-style:  none;
+    outline-style: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+svg {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.close-menu-btn, .burger-menu-btn {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    display: none;
+}
+
+.close-menu-btn {
+}
+
+.visible {
+    display: flex;
+}
+
+.mobile-menu-btn {
+    margin-left: auto;
+    display: flex;
+}
+
+@media (min-width: 500px) {
+   .header {
+        justify-content: space-between;
+    }
+  .nav {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    gap: 8px;
+  }
+
+  .nav .navlinks {
+    justify-content: start;
+    gap: 8px;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 16px;
+  }
+
+  .nav .navlinks a {
+    font-weight: 500;
+  }
+
+  .nav .nav-cta {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .nav .nav-cta .user-icon {
+    font-weight: 600;
+  }
+
+  .logout-btn {
+    width: auto;
+    padding: 8px 16px;
+    background: orange;
+    color: white;
+    border: none;
+    border-radius: 16px;
+    border-style:  none;
+    outline-style: none;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+.main {
+    width: 100%;
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    column-gap: 24px;
+}
+
+div.helptext {
+    display: none;
+}
+
+ul.errorlist {
+    outline: none;
+    border: 1px solid red;
+    background: red;
+    border-radius: 5px;
+    padding: 4px;
+}
+
+article.posts-feed {
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.posts-page__article {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.banner {
+    width: 100%;
+}
+
+
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 32px;
+
+}
+
+h1 {
+    margin-bottom: 32px;
+    font-size: 24px;
+}
+
+.post-edit {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-with-validation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-with-validation p {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+.form-with-validation div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+.form-with-validation div input {
+    padding: 8px;
+}
+
+.new-post-submit {
+    padding: 8px;
+}
+
+.action-btn {
+    display: flex;
+    gap: 20px;
+}
+
+
+.delete-form > .delete-btn{
+    width: auto;
+    height: 100%;
+    background: black;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style:  none;
+    outline-style: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.edit-btn {
+    width: auto;
+    background: black;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style:  none;
+    outline-style: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+

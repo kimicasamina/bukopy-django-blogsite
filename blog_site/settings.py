@@ -7,8 +7,7 @@ from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = False  # Make sure debug is turned off for production
-
-# ALLOWED_HOSTS: Allow all hosts to avoid issues on Vercel (you can restrict it later)
+SECRET_KEY = config('DJANGO_SECRET_KEY')
 ALLOWED_HOSTS = ['https://bukopy-blogsite.onrender.com', '*']
 
 # SECURITY SETTINGS
@@ -25,9 +24,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'whitenoise.runserver_nostatic',  # Whitenoise for static files
-    'posts',  # Your app
-    'users',  # Your app
+    'whitenoise.runserver_nostatic', 
+    'posts',  
+    'users', 
 ]
 
 MIDDLEWARE = [
@@ -38,7 +37,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Whitenoise middleware for serving static files
+    'whitenoise.middleware.WhiteNoiseMiddleware',  
 ]
 
 ROOT_URLCONF = 'blog_site.urls'
@@ -61,7 +60,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog_site.wsgi.application'
 
-# Database Configuration: Use PostgreSQL from Railway
+# Database Configuration: PostgreSQL from Railway
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL', default='postgres://user:password@localhost/dbname')
@@ -94,8 +93,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Ensure that Whitenoise can serve static files in production
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Whitenoise will collect static files here
+STATIC_ROOT = BASE_DIR / 'staticfiles'  
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  
+]
 
 # Media filess
 MEDIA_URL = '/media/'
@@ -104,11 +106,4 @@ MEDIA_ROOT = BASE_DIR / 'media'  # Ensure media is correctly mapped
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Set secret key from environment variables (for security)
-SECRET_KEY = config('DJANGO_SECRET_KEY')
 
-# For serverless: manage database connections (important in a serverless environment)
-# if 'VERCEL' in os.environ:
-#     DATABASES['default'] = dj_database_url.config(
-#         default=config('DATABASE_URL')
-#     )
