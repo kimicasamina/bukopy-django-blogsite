@@ -1,16 +1,47 @@
 {
-    "version": 2,
+<<<<<<< HEAD
+  "version": 2,
+  "builds": [
+    {
+      "src": "blog_site/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.10"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "blog_site/wsgi.py"
+    }
+  ]
+}
+=======
     "builds": [
       {
-        "src": "blog_site/wsgi.py",
-        "use": "@vercel/python"
+        "src": "manage.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb" }
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "blog_site/wsgi.py"
+        "dest": "/manage.py"
+      },
+      {
+        "src": "/static/(.*)",
+        "dest": "/staticfiles/$1"
+      },
+      {
+        "src": "/media/(.*)",
+        "dest": "/media/$1"
       }
     ]
   }
-  
+>>>>>>> production

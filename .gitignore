@@ -1,0 +1,17 @@
+<<<<<<< HEAD
+README.hello.md
+*.env 
+bin/
+lib/
+*.sqlite3
+
+
+=======
+NOTES.md
+*.pyc
+__pycache__/
+db.sqlite3
+.env
+/staticfiles/
+media/
+>>>>>>> production

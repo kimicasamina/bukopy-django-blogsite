@@ -16,11 +16,13 @@
     <p class="post__body">{{ post.body }}</p>
 
     {% if user.is_authenticated and user == post.author %}
-      <div class="">
-        <a href="{% url 'posts:post-edit' post.slug %}">Edit Post</a>
-        <form action="{% url 'posts:post-delete' post.slug %}" method="POST">
+      <div class="action-btn">
+        <a href="{% url 'posts:post-edit' post.slug %}" class="edit-btn">
+          <span >Edit Post</button>
+        </a>
+        <form action="{% url 'posts:post-delete' post.slug %}" method="POST" class="delete-form">
           {% csrf_token %}
-          <button type="submit">Delete Post</button>
+          <button type="submit" class="delete-btn">Delete Post</button>
         </form>
       </div>
     {% endif %}
