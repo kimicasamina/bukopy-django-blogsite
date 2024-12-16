@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = False  # Make sure debug is turned off for production
 
 # ALLOWED_HOSTS: Allow all hosts to avoid issues on Vercel (you can restrict it later)
-ALLOWED_HOSTS = ['https://bukopy-blogsite.onrender.com']
+ALLOWED_HOSTS = ['https://bukopy-blogsite.onrender.com', '*']
 
 # SECURITY SETTINGS
 SECURE_SSL_REDIRECT = True
