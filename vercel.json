@@ -1,31 +1,4 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a14e82cbe94a36b36207048212541701e5a464c2
-  "version": 2,
-  "builds": [
-    {
-      "src": "blog_site/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "runtime": "python3.10"
-<<<<<<< HEAD
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "blog_site/wsgi.py"
-    }
-  ]
-}
-=======
     "builds": [
       {
         "src": "manage.py",
@@ -48,20 +21,3 @@
       }
     ]
   }
->>>>>>> production
-=======
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "blog_site/wsgi.py"
-    }
-  ]
-}
->>>>>>> a14e82cbe94a36b36207048212541701e5a464c2
