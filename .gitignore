@@ -1,7 +1,10 @@
 NOTES.md
 *.pyc
 __pycache__/
-db.sqlite3
-.env
-/staticfiles/
+*.pyo
+*.db
+*.sqlite3
+*.env
+*.log
+staticfiles/
 media/
