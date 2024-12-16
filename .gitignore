@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a14e82cbe94a36b36207048212541701e5a464c2
 README.hello.md
 *.env 
 bin/
@@ -6,6 +9,7 @@ lib/
 *.sqlite3
 
 
+<<<<<<< HEAD
 =======
 NOTES.md
 *.pyc
@@ -15,3 +19,5 @@ db.sqlite3
 /staticfiles/
 media/
 >>>>>>> production
+=======
+>>>>>>> a14e82cbe94a36b36207048212541701e5a464c2

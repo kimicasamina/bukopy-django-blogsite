@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a14e82cbe94a36b36207048212541701e5a464c2
 Django>=5.0,<6.0
 psycopg2>=2.9
 whitenoise>=5.3
 dj-database-url>=0.5
+<<<<<<< HEAD
 python-decouple>=3.5
 =======
 asgiref==3.8.1
@@ -18,3 +22,6 @@ sqlparse==0.5.2
 typing_extensions==4.12.2
 whitenoise==6.8.2
 >>>>>>> production
+=======
+python-decouple>=3.5
+>>>>>>> a14e82cbe94a36b36207048212541701e5a464c2
