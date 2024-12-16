@@ -32,6 +32,12 @@ body {
     margin: 0 auto;
 }
 
+img {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 h1 {
     font-size: 20px;
     color: black;
@@ -114,6 +120,15 @@ li {
     font-weight: 400;
 }
 
+svg {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px;
+}
 
 .close-menu-btn, .burger-menu-btn {
     display: flex;
