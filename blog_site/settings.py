@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import os
-from pathlib import Path
-import dj_database_url
-from decouple import config
-=======
 """
 Django settings for blog_site project.
 
@@ -21,17 +15,12 @@ from decouple import config
 import os
 import dj_database_url
 
->>>>>>> production
 
 # Base directory
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG = False  # Make sure debug is turned off for production
 
-<<<<<<< HEAD
-# ALLOWED_HOSTS: Allow all hosts to avoid issues on Vercel (you can restrict it later)
-ALLOWED_HOSTS = ['*']
-=======
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -43,7 +32,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['your-vercel-domain.vercel.app', 'localhost']
 
->>>>>>> production
 
 # SECURITY SETTINGS
 SECURE_SSL_REDIRECT = True
@@ -80,12 +68,8 @@ ROOT_URLCONF = 'blog_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-<<<<<<< HEAD
-        'DIRS': [BASE_DIR / 'templates'],  # Make sure templates path is correct
-=======
         # 'DIRS': ['templates'],
         'DIRS': [BASE_DIR / 'templates'],
->>>>>>> production
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -100,18 +84,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog_site.wsgi.application'
 
-<<<<<<< HEAD
-# Database Configuration: Use PostgreSQL from Railway
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL', default='postgres://user:password@localhost/dbname')
-    )
-=======
 
 # Database
 DATABASES = {
     'default': dj_database_url.config(default=config('DATABASE_URL'))
->>>>>>> production
 }
 
 # Password validation
@@ -138,16 +114,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-<<<<<<< HEAD
-
-# Ensure that Whitenoise can serve static files in production
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Whitenoise will collect static files here
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Media files
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'  # Ensure media is correctly mapped
-=======
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # For media files (if used)
@@ -157,7 +123,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
->>>>>>> production
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
